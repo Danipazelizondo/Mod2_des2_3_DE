@@ -12,8 +12,24 @@
         'footer footer footer footer'
 }
 
+/* 48:23 min clase para empezar codigo css */
+
 .header {
     grid-area: header;
+    background-image: url(../img/celebración.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height:200px;
+    text-emphasis-position: middle;
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    color:#E0CAE6;
+}
+
+.logo img {
+    width: 300px;
 }
 
 .nav {
@@ -35,8 +51,10 @@
 
 }
 
-.aside {
-    grid-area: aside;
+.sidebar {
+    grid-area: sidebar;
+    background-color: #E6DDCA;
+    color: #66552B;
 }
 
 .sidebar-list {
@@ -49,6 +67,8 @@
 
 .main {
     grid-area: main;
+    background-color: #FFFFFF;
+    color: #2B6650;
 }
 
 .card {
@@ -73,6 +93,8 @@
 
 .footer {
     grid-area: footer;
+    background-color: #66552B;
+    color: #E6DDCA;
 }
 
 .footer-text {
@@ -84,5 +106,5 @@
 }
 
 .footer-social {
-    
+
 }
