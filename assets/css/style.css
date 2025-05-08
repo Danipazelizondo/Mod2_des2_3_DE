@@ -7,15 +7,17 @@
 .body {
     display: grid;
     grid-template-areas:
-        'header header header header'
-        'sidebar main main main'
-        'footer footer footer footer';
+        'header'
+        'sidebar'
+        'main'
+        'footer';
 /* para definir los espacios de las filas */
-    grid-template-rows: 150px 1fr 80px;
+    grid-template-rows: 80px auto 1fr 70px;
     
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 1fr;
 /* para indicar que ocupe el 100% del espacio del dispositivo que lo muestra */
     min-height: 100vh;
+    max-height: calc(100vh + 95px);
 }
 
 .header {
@@ -25,13 +27,39 @@
     background-image: url(../img/celebración.jpg);
     background-size:cover;
     background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 30px;
+    background-position: center; */
+    padding: 30px;
     color:#35223A;
+    background-color: #66552B;
+    color: #E6DDCA;
+}
+
+.header_display_nav, .header_close_nav {
+    background-color: #66552B;
+    color: #E6DDCA;
+    border: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.header_close_nav {
+    position: absolute;
+    z-index: 6;
+    top: 20px;
+    right: 20px;
+    display: none;
+}
+
+.header_display_nav:focus ~ .nav {
+    display: flex;
 }
 
 .logo {
-    width: 250px;
+    width: 150px;
     height: auto;
 }
 
@@ -41,14 +69,25 @@
 }
 
 .nav {
-    display: flex;
+    display: none;
+    flex-direction: column;
     gap:50px;
     justify-content: center;
     align-items: center;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #66552B;
 }
 
 .nav-list {
     display: flex;
+    flex-direction: column;
     gap: 30px;
     align-items: center;
     list-style: none;
@@ -97,26 +136,29 @@
     color: #66552B;
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 20px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 5px;
 }
 
 .sidebar-list {
     list-style: none;
+    display: flex;
 }
 
 .sidebar-item {
     display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    font-size: 18px;
+    justify-content: center;
+    flex-flow: nowrap;
+    font-size: 12px;
     padding: 10px 5px;
 }
 
 .category-count {
     font-weight: lighter;
     color: #828685;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 .main {
@@ -125,21 +167,24 @@
     color: #2B6650;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap:10px;
+    overflow: scroll;
 }
 
 .card {
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
+    justify-content: center;
     gap: 10px;
-    width: 300px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #828685;
     padding: 15px;
     /* para que el contenido respete el borde de la carta */
     overflow: hidden;
     background-color: #CAE6DB;
+    height: 500px;
+
 }
 
 .card-img {
@@ -148,7 +193,7 @@
 
 .card-img img {
     width: 100%;
-    max-height: 270px;
+    max-height: 250px;
     object-fit: cover;
 }
 
@@ -159,8 +204,13 @@
     gap: 15px;
 }
 
+.card-content h3, p{
+    font-size: 15px;
+}
+
 .card-description {
     text-align: center;
+    font-size: 12px;
 }
 
 .card-price {
@@ -200,4 +250,89 @@
 .footer-social a {
     color:#E6DDCA;
 text-decoration: none;
+}
+
+
+/* Media Query ipad */
+@media screen and (min width: 640px){
+    .nav {
+        display: flex;
+        flex-direction: row;
+        gap:50px;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        left: 0;
+        z-index: 5;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+        list-style: none;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .header_display_nav, .header_close_nav {
+        display: none;
+    }
+
+    .main {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    }
+
+    .card {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px #828685;
+        padding: 15px;
+        /* para que el contenido respete el borde de la carta */
+        overflow: hidden;
+        position: relative;
+        background-color: #CAE6DB;
+        height: 500px;
+        /* height: fit-content; */
+    }
+}
+
+
+/* Media Query laptop */
+@media screen and (mid-width: 900px) {
+    .body {
+        display: grid;
+        grid-template-areas:
+            'header header header header'
+            'sidebar main main main'
+            'footer footer footer footer';
+    /* para definir los espacios de las filas */
+        grid-template-rows: 150px 1fr 80px;
+        
+        grid-template-columns: 250px 1fr;
+    /* para indicar que ocupe el 100% del espacio del dispositivo que lo muestra */
+        min-height: 100vh;
+        max-height: calc(100vh + 600px);
+    }
+
+    .main {
+        grid-area: main;
+        background-color: #FFFFFF;
+        color: #2B6650;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap:10px;
+    }
 }
