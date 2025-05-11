@@ -308,7 +308,6 @@
 
 /* Layauts versión Escritorio */
 @media screen and (min-width: 992px) {
-
     .body {
         display: grid;
         grid-template-areas:
@@ -349,7 +348,7 @@
         width: 100%;
         object-fit: cover;
     }
-    
+
     .sidebar {
         display: flex;
         justify-content: flex-start;
@@ -357,7 +356,7 @@
         gap: 20px;
         padding: 20px 5px;
     }
-
+    
     .sidebar h4 {
         font-size: 22px;
     }
