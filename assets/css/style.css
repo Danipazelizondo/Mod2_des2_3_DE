@@ -162,6 +162,7 @@
     border: none;
     font-size: 12px;
     width: 100%;
+    color:#828685;
 }
 
 .filtros-btn {
@@ -173,16 +174,6 @@
     border-radius: 8px;
     font-size: 10px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .sidebar {
     grid-area: sidebar;
@@ -235,11 +226,9 @@
     border-radius: 15px;
     box-shadow: 0px 0px 10px #828685;
     padding: 15px;
-    /* para que el contenido respete el borde de la carta */
     overflow: hidden;
     background-color: #CAE6DB;
     height: 500px;
-
 }
 
 .card-img {
@@ -304,90 +293,105 @@
 
 .footer-social a {
     color:#E6DDCA;
-text-decoration: none;
+    text-decoration: none;
 }
 
 
+
+
 /* Layauts versión tablets */
-@media screen and (min width: 576px){
-    .nav {
-        display: flex;
-        flex-direction: row;
-        gap:50px;
-        justify-content: center;
-        align-items: center;
-        right: 0;
-        left: 0;
-        z-index: 5;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-    }
+@media screen and (min-width: 576px){
 
-    .nav-list {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        gap: 30px;
-        align-items: center;
-        list-style: none;
-        text-decoration: none;
-        cursor: pointer;
-    }
 
-    .header_display_nav, .header_close_nav {
-        display: none;
-    }
-
-    .main {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-    }
-
-    .card {
-        display: flex;
-        flex-flow: column nowrap;
-        gap: 10px;
-        width: 100%;
-        border-radius: 15px;
-        box-shadow: 0px 0px 10px #828685;
-        padding: 15px;
-        /* para que el contenido respete el borde de la carta */
-        overflow: hidden;
-        position: relative;
-        background-color: #CAE6DB;
-        height: 500px;
-        /* height: fit-content; */
-    }
 }
 
 
 /* Layauts versión Escritorio */
-@media screen and (mid-width: 992px) {
+@media screen and (min-width: 992px) {
+
     .body {
         display: grid;
         grid-template-areas:
             'header header header header'
             'sidebar main main main'
-            'footer footer footer footer';
+            'footer main main main';
     /* para definir los espacios de las filas */
         grid-template-rows: 150px 1fr 80px;
-        
         grid-template-columns: 250px 1fr;
     /* para indicar que ocupe el 100% del espacio del dispositivo que lo muestra */
         min-height: 100vh;
         max-height: calc(100vh + 600px);
     }
 
+    .header {
+        grid-area: header;
+        padding-right: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .header-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+    
+    .logo img {
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    .sidebar {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 5px;
+    }
+
+    .sidebar h4 {
+        font-size: 22px;
+    }
+
+    .sidebar-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+    }
+    
+    .sidebar-item {
+        display: flex;
+        justify-content: center;
+        flex-flow: nowrap;
+        padding: 5px;
+    }
+
+    .sidebar-item h4 {
+        font-size: 18px;
+    }
+    
+    .category-count {
+        font-weight: lighter;
+        color: #828685;
+        font-size: 14px;
+        padding-left: 3px;
+    }
+
     .main {
         grid-area: main;
-        background-color: #FFFFFF;
-        color: #2B6650;
         padding: 20px;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap:10px;
+        gap:15px;
     }
 }
