@@ -77,12 +77,12 @@
 	transform: translate(-100vw, -100vh);
 }
 
-.header_display_nav:focus ~ .nav {
+.header_display_nav:focus~ .nav {
     display: flex;
     transform: translate(0%);
 }
 
-.header_display_nav:focus ~ .header_close_nav {
+.header_display_nav:focus~ .header_close_nav {
     transform: translate(0%);
 }
 
