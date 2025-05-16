@@ -79,13 +79,11 @@
 
 .header_display_nav:focus ~ .nav {
     display: flex;
-    tabindex: 0;
     transform: translate(0%);
 }
 
 .header_display_nav:focus ~ .header_close_nav {
     transform: translate(0%);
-    tabindex: 0;
 }
 
 .nav {
