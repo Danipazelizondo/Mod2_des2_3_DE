@@ -12,7 +12,7 @@
         'main'
         'footer';
 /* para definir los espacios de las filas */
-    grid-template-rows: 75px auto 1fr 65px;
+    grid-template-rows: 75px auto 1fr 75px;
     
     grid-template-columns: 1fr;
 /* para indicar que ocupe el 100% del espacio del dispositivo que lo muestra */
