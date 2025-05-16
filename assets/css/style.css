@@ -20,10 +20,20 @@
     max-height: calc(100vh + 95px);
 }
 
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.logo img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .header {
     grid-area: header;
     background-color: #E0CAE6;
-    color:#E0CAE6;
+    color:#66552B;
     padding-right: 10px;
     background-image: url(../img/celebración.jpg);
     background-size:cover;
@@ -57,45 +67,40 @@
 
 .header_close_nav {
     position: absolute;
+    background-color: #66552B;
+    color: #E6DDCA;
     z-index: 6;
-    top: 10px;
+    top: 22px;
     right: 10px;
-    display: none;
+    display: flex;
+    transition: transform 0.1s ease-in-out;
+	transform: translate(-100vw, -100vh);
 }
 
 .header_display_nav:focus ~ .nav {
     display: flex;
+    transform: translate(0%);
 }
 
 .header_display_nav:focus ~ .header_close_nav {
-    display:flex;
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-.logo img {
-    width: 100%;
-    object-fit: cover;
+    transform: translate(0%);
 }
 
 .nav {
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap:50px;
     justify-content: center;
     align-items: center;
-    right: 0;
-    left: 0;
+    gap:50px;
     z-index: 5;
     height: 100vh;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    background-color: #66552B;
+    background-color: #E6DDCA;
+    transition: transform 0.7s ease-in-out;
+    transform: translate(0vw, -100vh);
 }
 
 .nav-list {
@@ -129,10 +134,10 @@
     border: none;
     padding: 6.2px;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
-.cart-count {
+.cart-count, .cart-count-back {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -140,15 +145,24 @@
     border-radius: 50%;
     left: 22px;
     bottom: 20px;
-    height: 20px;
-    width: 20px;
-    background-color: #E0CAE6;
+    height: 18px;
+    width: 18px;
+    background-color: #d184e891;
     font-weight: bold;
+    opacity: 1;
+    animation: none;
+}
+
+.cart-count-back {
+    background-color: #d084e8;
+    height: 18px;
+    width: 18px;
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .barra-filtros {
     overflow: hidden;
-    width:80%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     gap: 5px;
@@ -222,29 +236,31 @@
 .card {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    gap: 10px;
+    gap: 20px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px #828685;
-    padding: 15px;
     overflow: hidden;
     background-color: #CAE6DB;
     height: 500px;
+    width: 100%;
+    position: relative;
 }
 
 .card-img {
     width: 100%;
+    height: 280px;
+
 }
 
 .card-img img {
     width: 100%;
-    max-height: 250px;
+    height: 100%;
     object-fit: cover;
 }
 
 .card-content {
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
     align-items: center;
     gap: 15px;
 }
@@ -298,6 +314,19 @@
 }
 
 
+@keyframes ping {
+    75%,
+    100% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -310,7 +339,9 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap:15px;
     }
-
+    .nav {
+        transform: translate (0vw);
+    }
 }
 
 
@@ -384,4 +415,17 @@
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap:15px;
     }
+
+    .card-img {
+        opacity: 0.5;
+        filter: grayscale(1);
+        transition: opacity 0.5s ease-in-out 0.1s, filter 0.5s, transform 0.5s;
+        
+    }
+    .card-img:hover {
+        opacity: 1.0;
+        filter: none;
+        transform: scale(1.1);
+    }
 }
+
