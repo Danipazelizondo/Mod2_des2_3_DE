@@ -42,7 +42,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap:10px;
+    gap:20px;
 }
 
 .header-btn {
@@ -79,11 +79,13 @@
 
 .header_display_nav:focus ~ .nav {
     display: flex;
+    tabindex: 0;
     transform: translate(0%);
 }
 
 .header_display_nav:focus ~ .header_close_nav {
     transform: translate(0%);
+    tabindex: 0;
 }
 
 .nav {
