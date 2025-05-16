@@ -12,7 +12,7 @@
         'main'
         'footer';
 /* para definir los espacios de las filas */
-    grid-template-rows: 75px auto 1fr 60px;
+    grid-template-rows: 75px auto 1fr 65px;
     
     grid-template-columns: 1fr;
 /* para indicar que ocupe el 100% del espacio del dispositivo que lo muestra */
@@ -296,7 +296,7 @@
     background-color: #66552B;
     color: #E6DDCA;
     gap: 10px;
-    padding: 10px;
+    padding: 10px 5px;
 }
 
 .footer-list {
@@ -313,6 +313,10 @@
     text-decoration: none;
 }
 
+.footer p {
+    padding-bottom: 5px;
+    font-size: 15px;
+}
 
 @keyframes ping {
     75%,
