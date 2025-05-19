@@ -216,11 +216,13 @@
     padding: 20px;
 }
 
-
 .main-productos {
     background-color: #FFFFFF;
     color: #2B6650;
     padding: 20px;
+}
+
+.productos {
     display: grid;
     grid-template-columns: 1fr;
     gap:15px;
@@ -407,7 +409,7 @@
         padding: 12px;
     }
 
-    .main-productos {
+    .productos {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap:15px;
     }
