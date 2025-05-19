@@ -14,42 +14,40 @@
 
 <body class="body">
     <header class="header">
+    <!-- logo -->
         <div class="header-btn">
             <figure class="logo">
                 <img src="./assets/img/logo horizontal3.png" alt="logo">
             </figure>
-            <button class="cart-btn">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span class="cart-count-back"></span>
-                <span class="cart-count">3</span>
-            </button>
         </div>
+    
+    <!-- menú hamburguesa sólo vista celular -->
         <button class="header_display_nav" tabindex="0">
             <i class="fa-solid fa-bars"></i>
         </button>
         <button class="header_close_nav" tabindex="0">
             <i class="fa-solid fa-circle-xmark"></i>
         </button>
-
-
+        
+    <!-- barra navegación con carrito de compra visible en todas las versiones -->
         <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#">Inicio</a></li>
                 <li class="nav-item"><a href="#">Nosotros</a></li>
                 <li class="nav-item"><a href="#">Productos</a></li>
+                <li class="nav-item"><a href="#">Clientes</a></li>
                 <li class="nav-item"><a href="#">Contacto</a></li>
             </ul>
             <button class="cart-btn2">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span class="cart-count-back"></span>
-                <span class="cart-count">3</span>
+                <span class="cart-count">5</span>
             </button>
         </nav>
-    </header>
 
-    <aside class="sidebar">
-        <h4>Ordenar Por:</h4>
-            <nav class="barra-filtros">
+    <!-- barra de filtro que aparece sólo en version laptop -->
+        <nav class="barra-filtros-lap">
+            <h4>Ordenar Por:</h4>
                 <select>
                     <option value="Precio">Precio</option>
                     <option value="Tamaño">Tamaño</option>
@@ -57,7 +55,28 @@
                     <option value="Color">Color</option>
                 </select>
                 <button class="filtros-btn">Filtrar</button>
-            </nav>
+        </nav>
+
+    <!-- carrito de compra que visible en todas las versiones -->
+        <button class="cart-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count-back"></span>
+            <span class="cart-count">10</span>
+        </button>
+    </header>
+
+    <!-- sólo visible en ambas versiones móbiles -->
+    <aside class="sidebar">
+        <h5>Ordenar Por</h5>
+        <nav class="barra-filtros">
+            <select>
+                <option value="Precio">Precio</option>
+                <option value="Tamaño">Tamaño</option>
+                <option value="Categoría">Categoría</option>
+                <option value="Color">Color</option>
+            </select>
+            <button class="filtros-btn">Filtrar</button>
+        </nav>
     </aside>
 
     <main class="main">
@@ -129,7 +148,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
