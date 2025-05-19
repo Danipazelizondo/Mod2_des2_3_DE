@@ -207,11 +207,23 @@
 .main {
     grid-area: main;
     background-color: #FFFFFF;
+    overflow-y: scroll;
+}
+
+.main-nosotros {
+    background-color: #E0CAE6;
+    color: #51325a;
+    padding: 20px;
+}
+
+
+.main-productos {
+    background-color: #FFFFFF;
     color: #2B6650;
     padding: 20px;
     display: grid;
     grid-template-columns: 1fr;
-    gap:10px;
+    gap:15px;
     overflow-y: scroll;
 }
 
@@ -269,6 +281,21 @@
     font-weight: bold;
     padding: 15px;
 }
+
+
+.main-clientes {
+    background-color: #E0CAE6;
+    color: #51325a;
+    padding: 20px;
+}
+
+
+.main-contacto {
+    background-color:#FFFFFF;
+    color: #2B6650;
+    padding: 20px;
+}
+
 
 .footer {
     grid-area: footer;
@@ -380,7 +407,7 @@
         padding: 12px;
     }
 
-    .main {
+    .main-productos {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap:15px;
     }
