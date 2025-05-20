@@ -162,8 +162,8 @@
 
 .sidebar {
     grid-area: sidebar;
-    background-color: #E6DDCA;
-    color: #66552B;
+    background-color: #cae6dbc9;
+    color: #2B6650;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,8 +196,8 @@
 
 .filtros-btn {
     border: none;
-    background-color: #CAE6DB;
-    color: #2B6650;
+    background-color: #2B6650;
+    color: #CAE6DB;
     border: none;
     padding: 6.2px;
     border-radius: 8px;
@@ -207,26 +207,38 @@
 .main {
     grid-area: main;
     background-color: #FFFFFF;
-    overflow-y: scroll;
+
 }
 
 .main-nosotros {
-    background-color: #E0CAE6;
-    color: #51325a;
+    background-color: #E6DDCA;
+    color: #66552B;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
 
 .main-productos {
     background-color: #FFFFFF;
     color: #2B6650;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
 
 .productos {
     display: grid;
     grid-template-columns: 1fr;
     gap:15px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
 
 .card {
@@ -234,7 +246,7 @@
     flex-flow: column nowrap;
     gap: 20px;
     border-radius: 15px;
-    box-shadow: 0px 0px 10px #828685;
+    box-shadow: 0px 0px 5px #828685;
     overflow: hidden;
     background-color: #CAE6DB;
     height: 500px;
@@ -284,18 +296,50 @@
     padding: 15px;
 }
 
-
 .main-clientes {
-    background-color: #E0CAE6;
-    color: #51325a;
+    background-color: #E6DDCA;
+    color: #66552B;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
 
+.galeria {
+    display: flex;
+    justify-content: center;
+    width: 380px;
+    height: 350px;
+}
+
+.galeria img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: .5s ease;
+}
+
+.galeria img:hover {
+    /* cursor: crosshair; */
+    width: 240px;
+    opacity: 1;
+    filter: contrast(120%);
+}
 
 .main-contacto {
     background-color:#FFFFFF;
     color: #2B6650;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
 }
 
 
@@ -446,6 +490,8 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 40px;
+        background-size:cover;
+        background-position: bottom;
     }
 
     .header h4{
@@ -503,6 +549,18 @@
         opacity: 1.0;
         filter: none;
         transform: scale(1.1);
+    }
+
+    .galeria {
+        width: 900px;
+        height: 430px;
+    }
+
+    .galeria img:hover {
+        /* cursor: crosshair; */
+        width: 600px;
+        opacity: 1;
+        filter: contrast(120%);
     }
 
     .footer {
